@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="persona" class="mx.unam.fes.model.Persona">
+	<!-- constructor injection using the nested ref element -->
+	<constructor-arg>
+		<ref bean="trabajo"/>
+	</constructor-arg>
+
+	<!-- constructor injection using the neater ref attribute -->
+	<constructor-arg ref="salario"/>
+
+	<constructor-arg type="java.lang.String" value="John Doe"/>
+</bean>
+
+<bean id="trabajo" class="mx.unam.fes.model.Trabajo"/>
+<bean id="salario" class="mx.unam.fes.model.Salario"/>
+
+</beans>
