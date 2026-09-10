@@ -22,6 +22,7 @@ public class Configure {
     public Materia getMateria(){
         Materia materia = new Materia();
         return materia;
+        
     }
 
     @Bean
